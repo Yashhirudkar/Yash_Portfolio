@@ -102,7 +102,7 @@ export function Hero() {
               Full Stack Developer <span className="text-[#0047FF]">·</span> Software Engineer
             </p>
 
-            <p className="max-w-[26rem] sm:max-w-[30rem] font-sans text-xs sm:text-[13px] leading-[1.65] text-[#0A0A0C]/85 font-normal">
+            <p className="hidden sm:block max-w-[26rem] sm:max-w-[30rem] font-sans text-xs sm:text-[13px] leading-[1.65] text-[#0A0A0C]/85 font-normal">
               Crafting high-performance enterprise architectures, scalable PostgreSQL systems, and refined React web applications with absolute precision.
             </p>
           </div>
