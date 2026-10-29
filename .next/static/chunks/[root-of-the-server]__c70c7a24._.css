@@ -877,20 +877,8 @@
     top: calc(var(--spacing) * 6);
   }
 
-  .top-\[40\%\] {
-    top: 40%;
-  }
-
-  .top-\[50\%\] {
-    top: 50%;
-  }
-
   .top-\[58\%\] {
     top: 58%;
-  }
-
-  .top-\[62\%\] {
-    top: 62%;
   }
 
   .top-\[70\%\] {
@@ -915,10 +903,6 @@
 
   .right-2 {
     right: calc(var(--spacing) * 2);
-  }
-
-  .right-12 {
-    right: calc(var(--spacing) * 12);
   }
 
   .-bottom-3 {
@@ -959,10 +943,6 @@
 
   .left-2 {
     left: calc(var(--spacing) * 2);
-  }
-
-  .left-12 {
-    left: calc(var(--spacing) * 12);
   }
 
   .left-\[8\%\] {
