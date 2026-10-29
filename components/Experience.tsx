@@ -27,7 +27,7 @@ const EXPERIENCES: ExperienceItem[] = [
     company: "Agricom Impex",
     role: "Full Stack Developer",
     location: "Nagpur, India · Hybrid",
-    status: "ACTIVE // PRODUCTION",
+    status: "FULL-TIME // ACTIVE",
     specNo: "EXP.01",
     kanji: "構造設計",
     description:
@@ -42,12 +42,12 @@ const EXPERIENCES: ExperienceItem[] = [
   },
   {
     id: "bizprospex",
-    year: "2024",
-    duration: "JUN 2024 — MAY 2026",
+    year: "2025",
+    duration: "JUN 2025 — JUN 2026",
     company: "BizProspex",
     role: "Software Developer",
     location: "Nagpur, India",
-    status: "CERTIFIED // COMPLETED",
+    status: "EMPLOYMENT // COMPLETED",
     specNo: "EXP.02",
     kanji: "基盤構築",
     description:
@@ -156,7 +156,7 @@ export function Experience() {
           <span>SEC.05 // PROFESSIONAL JOURNEY</span>
         </div>
         <div className="absolute top-6 right-6 hidden sm:flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.32em] text-[#6B7280]/40">
-          <span>TIMELINE // 2024 — 2026</span>
+          <span>TIMELINE // 2025 — 2026</span>
           <span>+</span>
         </div>
         <div className="absolute bottom-6 left-6 hidden sm:flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.32em] text-[#6B7280]/40">
@@ -173,13 +173,13 @@ export function Experience() {
           MAIN CONTENT CONTAINER
       ───────────────────────────────────────────────────────────── */}
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 md:px-12 lg:px-16">
-        
+
         {/* ==========================================================
             TOP: EDITORIAL SECTION HEADER
         ========================================================== */}
         <div className="mb-20 sm:mb-28 lg:mb-32">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-[#111111]/10 pb-8 sm:pb-12">
-            
+
             {/* Left Header Column */}
             <div className="space-y-4 max-w-3xl">
               {/* Small Label */}
@@ -254,10 +254,10 @@ export function Experience() {
             MIDDLE: EDITORIAL TIMELINE WITH CONTINUOUS BLUEPRINT LINE
         ========================================================== */}
         <div className="relative">
-          
+
           {/* ── Central Vertical Blueprint Line (Desktop / Tablet) ── */}
           <div className="absolute top-0 bottom-0 left-4 sm:left-6 md:left-1/2 -translate-x-1/2 w-[1px] bg-[#111111]/10 pointer-events-none" />
-          
+
           {/* Scroll-Linked Fill Indicator */}
           <motion.div
             style={{ scaleY, transformOrigin: "top" }}
@@ -285,7 +285,7 @@ export function Experience() {
                       Item 01: Spec Card Left | Year Right
                       Item 02: Year Left | Spec Card Right
                   ==================================================== */}
-                  
+
                   {/* LEFT COLUMN (Desktop 50%) */}
                   <div className={`w-full md:w-1/2 pl-12 sm:pl-16 md:pl-0 ${isEven ? "md:pr-14 lg:pr-20 md:text-right" : "md:pr-14 lg:pr-20"}`}>
                     {!isEven ? (
@@ -446,9 +446,8 @@ function YearShowcase({ item, isReversed }: { item: ExperienceItem; isReversed: 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.75, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-      className={`h-full flex flex-col justify-between py-4 ${
-        isReversed ? "md:items-end md:text-right" : "md:items-start md:text-left"
-      }`}
+      className={`h-full flex flex-col justify-between py-4 ${isReversed ? "md:items-end md:text-right" : "md:items-start md:text-left"
+        }`}
     >
       {/* Top Year Metric & Japanese Watermark */}
       <div className="space-y-1">
