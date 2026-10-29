@@ -1,7 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, FileText, CheckCircle2 } from "lucide-react";
+import {
+  ArrowUpRight,
+  Github,
+  FileText,
+  CheckCircle2,
+  Lock,
+  Building2,
+  Search,
+  Bell,
+  ChevronDown,
+  Filter,
+  Plus,
+  LayoutDashboard,
+  Users,
+  Boxes,
+  Layers,
+  BarChart3,
+  Settings,
+  FileCheck,
+  Truck,
+} from "lucide-react";
 
 interface ProjectItem {
   id: string;
@@ -18,75 +38,102 @@ interface ProjectItem {
   liveUrl: string;
   githubUrl: string;
   caseStudyUrl: string;
-  mockupType: "crm" | "webinar" | "portfolio";
+  mockupType: "crm" | "webinar" | "portfolio" | "bizprospex" | "listbuilder";
 }
+
+const FICTIONAL_CRM_CONTRACTS = [
+  { id: "AGR-2048", buyer: "Kyoto Grain Trading Corp", commodity: "Sample Wheat", qty: "2,400 MT", status: "Approved" },
+  { id: "AGR-2049", buyer: "Caspian Harvest Alliance", commodity: "Organic Corn", qty: "1,850 MT", status: "Active" },
+  { id: "AGR-2050", buyer: "Solaria Agro Mills", commodity: "Commodity Alpha", qty: "3,200 MT", status: "Active" },
+  { id: "AGR-2051", buyer: "Bavaria Agri-Ventures", commodity: "Commodity Beta", qty: "950 MT", status: "Completed" },
+  { id: "AGR-2052", buyer: "Helvetia Commodity Group", commodity: "Golden Linseed", qty: "1,400 MT", status: "Pending" },
+  { id: "AGR-2053", buyer: "Aura Global Agro Corp", commodity: "Sample Wheat", qty: "4,100 MT", status: "Approved" },
+];
 
 const PROJECTS: ProjectItem[] = [
   {
     id: "agricom-crm",
     num: "01",
-    name: "Agricom CRM",
+    name: "Agricom CRM & ERP Platform",
     kanji: "貿易管理基盤",
     category: "ENTERPRISE SAAS // AGRIBUSINESS ERP",
     description:
-      "Enterprise CRM & ERP platform engineered for agricultural commodities export and trading operations. Architected 30+ business modules spanning multi-tier hierarchical RBAC, dynamic workflow approvals, real-time logistics tracking, and transactional PostgreSQL query optimization.",
+      "Designed and developed production modules for Agricom CRM & ERP, including Sales Contracts, Purchase Contracts, Shipment Management, Freight Management, Inventory, RBAC, workflow automation, and PostgreSQL-powered enterprise operations. Built scalable dashboards, reusable React components, REST APIs, and optimized large transactional datasets for international agricultural trade.",
     role: "Full Stack Developer",
-    year: "2026",
+    year: "2025 — Present",
     status: "Production Live",
-    stack: ["REACT", "NEXT.JS", "NODE.JS", "NESTJS", "POSTGRESQL", "DOCKER"],
+    stack: [
+      "REACT",
+      "NEXT.JS",
+      "NODE.JS",
+      "NESTJS",
+      "POSTGRESQL",
+      "DOCKER",
+      "TAILWIND CSS",
+      "SOCKET.IO",
+    ],
     metrics: [
       { label: "MODULES", value: "30+" },
       { label: "UPTIME", value: "99.9%" },
       { label: "LATENCY", value: "<15ms" },
     ],
-    liveUrl: "https://github.com/yashhirudkar",
-    githubUrl: "https://github.com/yashhirudkar",
+    liveUrl: "",
+    githubUrl: "",
     caseStudyUrl: "#",
     mockupType: "crm",
   },
   {
-    id: "trading-workshop",
+    id: "enterprise-list-builder",
     num: "02",
-    name: "Trading Workshop Platform",
-    kanji: "配信決済基盤",
-    category: "EDTECH PLATFORM // FINTECH CHECKOUT",
+    name: "Enterprise List Builder Platform",
+    kanji: "名簿構築基盤",
+    category: "ENTERPRISE SAAS // B2B INTELLIGENCE",
     description:
-      "High-converting live webinar and fintech checkout platform built for trading education. Built with automated attendee funnels, idempotent multi-gateway payment processing, HMAC webhook verification, dynamic coupon validation, and low-latency analytics.",
-    role: "Full Stack Engineer",
-    year: "2025",
+      "Designed and developed a production-grade List Builder platform for ExhibitorsData, enabling users to search, filter, segment, and export millions of verified B2B contacts. Implemented advanced filtering, enterprise data tables, pagination, CRM workflows, high-performance search, and responsive UI for large-scale datasets.",
+    role: "Full Stack Developer",
+    year: "2025 — Present",
     status: "Production Live",
-    stack: ["NEXT.JS", "TYPESCRIPT", "NODE.JS", "POSTGRESQL", "TAILWIND CSS"],
-    metrics: [
-      { label: "ATTENDEES", value: "2.4K+" },
-      { label: "CONVERSION", value: "14.8%" },
-      { label: "PAYMENTS", value: "IDEMPOTENT" },
+    stack: [
+      "NEXT.JS",
+      "REACT",
+      "NODE.JS",
+      "NESTJS",
+      "POSTGRESQL",
+      "TAILWIND CSS",
+      "DOCKER",
+      "AWS",
     ],
-    liveUrl: "https://github.com/yashhirudkar",
-    githubUrl: "https://github.com/yashhirudkar",
+    metrics: [
+      { label: "VERIFIED CONTACTS", value: "10M+" },
+      { label: "PAGINATION CAPACITY", value: "19K+ PGS" },
+      { label: "SEARCH LATENCY", value: "<45ms" },
+    ],
+    liveUrl: "https://exhibitorsdata.com/user/app/list-builder",
+    githubUrl: "",
     caseStudyUrl: "#",
-    mockupType: "webinar",
+    mockupType: "listbuilder",
   },
   {
-    id: "portfolio-website",
+    id: "bizprospex-website",
     num: "03",
-    name: "Portfolio Website",
-    kanji: "対話意匠作品",
-    category: "EDITORIAL DESIGN // INTERACTIVE SYSTEM",
+    name: "BizProspex Website",
+    kanji: "情報基盤",
+    category: "B2B DATA INTELLIGENCE // ENTERPRISE WEBSITE",
     description:
-      "A luxury Japanese-inspired interactive portfolio designed with strict editorial minimalism, Apple-inspired whitespace, and blueprint aesthetics. Built using Next.js 15, React 19, Tailwind CSS v4, and Framer Motion with fluid typography and micro-interactions.",
-    role: "UI/UX & Frontend Architect",
-    year: "2026",
-    status: "Completed",
-    stack: ["NEXT.JS", "REACT", "TYPESCRIPT", "TAILWIND CSS", "FRAMER MOTION"],
+      "Enterprise corporate website and B2B data intelligence platform. Engineered responsive modern web interfaces, automated CRM data scrubbing microservices, and verified contact intelligence pipelines serving 500+ global enterprises.",
+    role: "Software Developer",
+    year: "2025",
+    status: "Production Live",
+    stack: ["REACT", "NODE.JS", "POSTGRESQL", "REST APIS", "DOCKER"],
     metrics: [
-      { label: "PERF SCORE", value: "100" },
-      { label: "FIRST LOAD", value: "<69kB" },
-      { label: "FRAME RATE", value: "60 FPS" },
+      { label: "ACCURACY", value: "98%" },
+      { label: "VERIFIED DATA", value: "10M+" },
+      { label: "CLIENTS", value: "500+" },
     ],
-    liveUrl: "#",
+    liveUrl: "https://bizprospex.com/",
     githubUrl: "https://github.com/yashhirudkar",
-    caseStudyUrl: "#",
-    mockupType: "portfolio",
+    caseStudyUrl: "https://bizprospex.com/",
+    mockupType: "bizprospex",
   },
 ];
 
@@ -186,13 +233,13 @@ export function FeaturedWork() {
           MAIN CONTENT CONTAINER
       ───────────────────────────────────────────────────────────── */}
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 md:px-12 lg:px-16">
-        
+
         {/* ==========================================================
             TOP: EDITORIAL SECTION HEADER
         ========================================================== */}
         <div className="mb-20 sm:mb-28 lg:mb-32">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-[#111111]/10 pb-8 sm:pb-12">
-            
+
             {/* Left Header Column */}
             <div className="space-y-4 max-w-3xl">
               {/* Small Label */}
@@ -285,12 +332,11 @@ export function FeaturedWork() {
                     Occupies 58% on Desktop, Stacks on Mobile
                 ==================================================== */}
                 <div
-                  className={`w-full lg:w-[58%] ${
-                    isEven ? "lg:order-2" : "lg:order-1"
-                  }`}
+                  className={`w-full lg:w-[58%] ${isEven ? "lg:order-2" : "lg:order-1"
+                    }`}
                 >
                   <div className="relative border border-[#111111]/12 bg-[#FFFFFF] p-3 sm:p-5 shadow-[0_25px_60px_-25px_rgba(17,17,17,0.06)] transition-all duration-500 group-hover:border-[#2563EB]/60 group-hover:shadow-[0_30px_70px_-20px_rgba(37,99,235,0.12)]">
-                    
+
                     {/* Corner Crosshairs */}
                     <span className="absolute top-1.5 left-2 font-mono text-[9px] text-[#111111]/25 select-none transition-colors group-hover:text-[#2563EB]/70">+</span>
                     <span className="absolute top-1.5 right-2 font-mono text-[9px] text-[#111111]/25 select-none transition-colors group-hover:text-[#2563EB]/70">+</span>
@@ -310,7 +356,7 @@ export function FeaturedWork() {
                           SPEC.04-{project.num}
                         </span>
                       </div>
-                      
+
                       <div className="flex items-center gap-2 text-[8.5px] text-[#6B7280]/80">
                         <span className="text-[#2563EB]">●</span>
                         <span>{project.status}</span>
@@ -319,10 +365,10 @@ export function FeaturedWork() {
 
                     {/* Visual Mockup Viewport */}
                     <div className="relative overflow-hidden aspect-[16/10] sm:aspect-[16/9] bg-[#FAFAFA] border border-[#111111]/8 flex flex-col justify-between p-4 sm:p-6">
-                      
+
                       {/* Zoom Target on Hover (1.03x) */}
                       <div className="absolute inset-0 transition-transform duration-700 ease-[0.16,1,0.3,1] group-hover:scale-[1.03]">
-                        
+
                         {/* Background Blueprint Grid within Artboard */}
                         <svg className="absolute inset-0 h-full w-full opacity-[0.06]" aria-hidden="true">
                           <defs>
@@ -334,161 +380,554 @@ export function FeaturedWork() {
                         </svg>
 
                         {/* ==============================================
-                            MOCKUP VARIANT 1: AGRICOM CRM DASHBOARD SPEC
+                            MOCKUP VARIANT 1: AI-GENERATED ENTERPRISE CRM DASHBOARD
                         ============================================== */}
                         {project.mockupType === "crm" && (
-                          <div className="relative h-full w-full flex flex-col justify-between p-3 sm:p-5 font-mono">
-                            {/* Browser Address Bar Spec */}
-                            <div className="flex items-center justify-between border border-[#111111]/10 bg-white/95 px-3 py-1.5 text-[9px] uppercase tracking-wider text-[#6B7280] shadow-sm">
-                              <span className="text-[#111111] flex items-center gap-1.5">
-                                <span className="h-1.5 w-1.5 rounded-full bg-[#2563EB]" />
-                                <span>agricom.platform.internal/v2/operations</span>
-                              </span>
-                              <span className="text-[8px] text-[#2563EB]">TLS 1.3 // SECURE</span>
+                          <div className="relative h-full w-full flex flex-col bg-[#F8FAFC] overflow-hidden text-left font-sans select-none border border-[#CBD5E1]/60">
+                            {/* Realistic macOS Desktop Browser Header */}
+                            <div className="relative z-20 h-7 sm:h-8 bg-[#EBF0F5] border-b border-[#CBD5E1] px-2.5 sm:px-3 flex items-center justify-between gap-2 shrink-0">
+                              {/* macOS Traffic Lights */}
+                              <div className="flex items-center gap-1.5 shrink-0">
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56] border border-[#E0443E]/80 shadow-xs" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] border border-[#DEA123]/80 shadow-xs" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F] border border-[#1AAB29]/80 shadow-xs" />
+                              </div>
+
+                              {/* Browser History & Navigation Icons */}
+                              <div className="hidden sm:flex items-center gap-1 text-[#64748B] shrink-0">
+                                <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                                </svg>
+                                <svg className="w-2.5 h-2.5 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                                </svg>
+                                <svg className="w-2.5 h-2.5 ml-0.5 text-[#64748B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                </svg>
+                              </div>
+
+                              {/* Realistic Address Bar */}
+                              <div className="flex-1 max-w-[400px] sm:max-w-[480px] h-5 sm:h-6 bg-white rounded border border-[#CBD5E1] px-2 flex items-center justify-between text-[9px] sm:text-[10px] shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
+                                <div className="flex items-center gap-1.5 truncate">
+                                  <Lock className="w-2.5 h-2.5 text-[#10B981] shrink-0" />
+                                  <div className="w-2.5 h-2.5 rounded-[2px] bg-[#2563EB] text-white flex items-center justify-center text-[6.5px] font-black shrink-0 leading-none">
+                                    AG
+                                  </div>
+                                  <div className="flex items-baseline font-mono text-[8px] sm:text-[9.5px] truncate">
+                                    <span className="text-[#94A3B8]">https://</span>
+                                    <span className="text-[#0F172A] font-semibold">app.agricom.internal</span>
+                                    <span className="text-[#64748B]">/sales/contracts</span>
+                                  </div>
+                                </div>
+                                <span className="hidden xs:inline-block font-mono text-[7px] text-[#10B981] uppercase tracking-wider shrink-0 font-medium">
+                                  TLS 1.3 // SECURE
+                                </span>
+                              </div>
+
+                              {/* Browser Controls */}
+                              <div className="hidden sm:flex items-center gap-1.5 text-[#64748B] shrink-0">
+                                <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                                </svg>
+                                <svg className="w-2.5 h-2.5 fill-none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                </svg>
+                              </div>
                             </div>
 
-                            {/* Core Dashboard Matrix Specimen */}
-                            <div className="my-auto grid grid-cols-3 gap-2.5 sm:gap-3 py-2">
-                              <div className="border border-[#111111]/10 bg-white p-2.5 sm:p-3 shadow-sm space-y-1">
-                                <div className="text-[8px] text-[#6B7280] tracking-widest">ACTIVE MODULES</div>
-                                <div className="font-display text-lg sm:text-xl font-bold text-[#111111]">30+ ENGINES</div>
-                                <div className="text-[7.5px] text-[#2563EB]">100% RBAC VERIFIED</div>
-                              </div>
-                              <div className="border border-[#111111]/10 bg-white p-2.5 sm:p-3 shadow-sm space-y-1">
-                                <div className="text-[8px] text-[#6B7280] tracking-widest">TRANSACTIONS</div>
-                                <div className="font-display text-lg sm:text-xl font-bold text-[#111111]">100k+ ROWS</div>
-                                <div className="text-[7.5px] text-[#111111]/70">CURSOR PAGINATED</div>
-                              </div>
-                              <div className="border border-[#111111]/10 bg-white p-2.5 sm:p-3 shadow-sm space-y-1">
-                                <div className="text-[8px] text-[#6B7280] tracking-widest">COMMODITIES</div>
-                                <div className="font-display text-lg sm:text-xl font-bold text-[#111111]">$14.2M AUDIT</div>
-                                <div className="text-[7.5px] text-[#2563EB]">ACID COMPLIANT</div>
-                              </div>
-                            </div>
+                            {/* Clean White Interface with Blueprint Grid Background */}
+                            <div className="relative flex-1 bg-white overflow-hidden flex flex-col text-left font-sans select-none">
+                              {/* Blueprint micro grid pattern */}
+                              <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(#2563EB_0.6px,transparent_0.6px)] [background-size:16px_16px] opacity-[0.035]" />
 
-                            {/* Lower Pipeline & Activity Vector Diagram */}
-                            <div className="border border-[#111111]/10 bg-white/90 p-2.5 sm:p-3 flex items-center justify-between text-[8px] uppercase tracking-wider text-[#6B7280]">
-                              <div className="flex items-center gap-2">
-                                <span className="h-1.5 w-1.5 rounded-full bg-[#2563EB] animate-pulse" />
-                                <span className="text-[#111111] font-semibold">SOCKET.IO TIMELINE</span>
-                                <span className="hidden sm:inline text-[#6B7280]/60">// REAL-TIME STREAMING</span>
+                              {/* Top App Navigation */}
+                              <div className="relative z-10 w-full h-6.5 sm:h-7.5 border-b border-[#E2E8F0] bg-white/95 px-2.5 sm:px-3 flex items-center justify-between shrink-0">
+                                {/* Workspace Selector */}
+                                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#F8FAFC] border border-[#E2E8F0] text-[8px] font-semibold text-[#0F172A]">
+                                  <Building2 className="w-2.5 h-2.5 text-[#2563EB]" />
+                                  <span className="truncate max-w-[120px] sm:max-w-none">Kyoto Global AgriTrade</span>
+                                  <ChevronDown className="w-2 h-2 text-[#64748B]" />
+                                </div>
+
+                                {/* Global Search */}
+                                <div className="hidden sm:flex items-center gap-1.5 w-44 lg:w-56 h-4.5 px-2 bg-[#F1F5F9]/80 rounded border border-[#E2E8F0] text-[7.5px] text-[#64748B]">
+                                  <Search className="w-2 h-2 text-[#94A3B8]" />
+                                  <span className="truncate">Search contracts, commodities...</span>
+                                  <span className="ml-auto font-mono text-[6.5px] text-[#94A3B8]">⌘K</span>
+                                </div>
+
+                                {/* Notifications & Profile */}
+                                <div className="flex items-center gap-2">
+                                  <div className="relative p-0.5 text-[#64748B] hover:text-[#0F172A] cursor-pointer">
+                                    <Bell className="w-2.5 h-2.5" />
+                                    <span className="absolute top-0 right-0 w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+                                  </div>
+                                  <div className="flex items-center gap-1.5 pl-1.5 border-l border-[#E2E8F0]">
+                                    <div className="w-4 h-4 rounded-full bg-[#2563EB] text-white flex items-center justify-center text-[7px] font-bold">
+                                      AG
+                                    </div>
+                                    <div className="hidden md:block leading-none">
+                                      <div className="text-[7.5px] font-bold text-[#0F172A]">Alex Rivera</div>
+                                      <div className="text-[6px] text-[#64748B]">Operations Lead</div>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
-                              <span className="font-mono text-[#2563EB]">21.1458° N, 79.0882° E</span>
+
+                              {/* Main Content Area: Sidebar + Table Viewport */}
+                              <div className="relative z-10 flex-1 flex overflow-hidden">
+                                
+                                {/* Left Navigation Sidebar */}
+                                <div className="hidden sm:flex flex-col w-20 lg:w-24 border-r border-[#E2E8F0] bg-[#F8FAFC]/90 py-1.5 shrink-0">
+                                  <div className="space-y-0.5 px-1">
+                                    {[
+                                      { name: "Dashboard", icon: LayoutDashboard },
+                                      { name: "Customers", icon: Users },
+                                      { name: "Sales Contracts", icon: FileText, active: true },
+                                      { name: "Purchase Orders", icon: FileCheck },
+                                      { name: "Shipments", icon: Truck },
+                                      { name: "Inventory", icon: Boxes },
+                                      { name: "Finance", icon: Layers },
+                                      { name: "Reports", icon: BarChart3 },
+                                      { name: "Settings", icon: Settings },
+                                    ].map((item) => {
+                                      const Icon = item.icon;
+                                      return (
+                                        <div
+                                          key={item.name}
+                                          className={`flex items-center gap-1.5 px-1.5 py-0.5 rounded text-[7px] lg:text-[7.5px] font-medium transition-colors cursor-pointer ${
+                                            item.active
+                                              ? "bg-[#EFF6FF] text-[#2563EB] font-bold border border-[#BFDBFE]/60 shadow-xs"
+                                              : "text-[#64748B] hover:text-[#0F172A] hover:bg-white"
+                                          }`}
+                                        >
+                                          <Icon className="w-2 h-2 shrink-0" />
+                                          <span className="truncate">{item.name}</span>
+                                        </div>
+                                      );
+                                    })}
+                                  </div>
+                                </div>
+
+                                {/* Table Workspace Container */}
+                                <div className="flex-1 flex flex-col justify-between p-1.5 sm:p-2 overflow-hidden bg-white/70">
+                                  
+                                  {/* Top 4 KPI Cards */}
+                                  <div className="grid grid-cols-2 md:grid-cols-4 gap-1 sm:gap-1.5 mb-1.5">
+                                    <div className="bg-white rounded border border-[#E2E8F0] p-1 shadow-xs">
+                                      <div className="flex items-center justify-between text-[6px] sm:text-[7px] font-mono uppercase tracking-wider text-[#64748B]">
+                                        <span>Active Contracts</span>
+                                        <span className="text-[#059669] font-bold">+12%</span>
+                                      </div>
+                                      <div className="font-sans font-black text-[10px] sm:text-[12px] text-[#0F172A] leading-tight mt-0.5">
+                                        148
+                                      </div>
+                                    </div>
+
+                                    <div className="bg-white rounded border border-[#E2E8F0] p-1 shadow-xs">
+                                      <div className="flex items-center justify-between text-[6px] sm:text-[7px] font-mono uppercase tracking-wider text-[#64748B]">
+                                        <span>Revenue (Q4)</span>
+                                        <span className="text-[#2563EB] font-bold">92%</span>
+                                      </div>
+                                      <div className="font-sans font-black text-[10px] sm:text-[12px] text-[#0F172A] leading-tight mt-0.5">
+                                        $18.4M
+                                      </div>
+                                    </div>
+
+                                    <div className="bg-white rounded border border-[#E2E8F0] p-1 shadow-xs">
+                                      <div className="flex items-center justify-between text-[6px] sm:text-[7px] font-mono uppercase tracking-wider text-[#64748B]">
+                                        <span>Shipments</span>
+                                        <span className="text-[#059669] font-bold">On Time</span>
+                                      </div>
+                                      <div className="font-sans font-black text-[10px] sm:text-[12px] text-[#0F172A] leading-tight mt-0.5">
+                                        34 Active
+                                      </div>
+                                    </div>
+
+                                    <div className="bg-white rounded border border-[#E2E8F0] p-1 shadow-xs">
+                                      <div className="flex items-center justify-between text-[6px] sm:text-[7px] font-mono uppercase tracking-wider text-[#64748B]">
+                                        <span>Inventory MT</span>
+                                        <span className="text-[#D97706] font-bold">96%</span>
+                                      </div>
+                                      <div className="font-sans font-black text-[10px] sm:text-[12px] text-[#0F172A] leading-tight mt-0.5">
+                                        24,500 MT
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  {/* Sub-Header & Controls */}
+                                  <div className="flex items-center justify-between pb-1 mb-1 border-b border-[#F1F5F9]">
+                                    <div className="flex items-center gap-1.5">
+                                      <h5 className="font-sans font-extrabold text-[9px] sm:text-[10px] text-[#0F172A] tracking-tight">
+                                        Sales Contracts
+                                      </h5>
+                                      <span className="hidden xs:inline-block px-1 py-0.2 rounded bg-[#F1F5F9] text-[#64748B] text-[6.5px] font-mono">
+                                        148 Records
+                                      </span>
+                                    </div>
+
+                                    <div className="flex items-center gap-1">
+                                      <div className="flex items-center gap-0.5 px-1.5 py-0.5 rounded border border-[#E2E8F0] bg-white text-[7px] text-[#475569]">
+                                        <Filter className="w-1.5 h-1.5 text-[#64748B]" />
+                                        <span>Filter</span>
+                                      </div>
+                                      <div className="flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#2563EB] text-white text-[7px] font-bold shadow-xs">
+                                        <Plus className="w-1.5 h-1.5" />
+                                        <span>New Contract</span>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  {/* Enterprise Data Table - 100% Non-Scrollable & Fully Responsive */}
+                                  <div className="flex-1 overflow-hidden rounded border border-[#E2E8F0] bg-white flex flex-col justify-between [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                                    <div className="w-full overflow-hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                                      <table className="w-full table-fixed text-left border-collapse select-none">
+                                        <thead>
+                                          <tr className="bg-[#F8FAFC] border-b border-[#E2E8F0] text-[6.5px] sm:text-[7.5px] font-mono uppercase tracking-wider text-[#64748B]">
+                                            <th className="py-1 px-2 w-[18%] truncate">Contract ID</th>
+                                            <th className="py-1 px-2 w-[32%] truncate">Buyer</th>
+                                            <th className="py-1 px-2 w-[20%] truncate">Commodity</th>
+                                            <th className="py-1 px-2 w-[15%] truncate">Quantity</th>
+                                            <th className="py-1 px-2 w-[15%] text-right truncate">Status</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody className="divide-y divide-[#F1F5F9] text-[7px] sm:text-[7.5px]">
+                                          {FICTIONAL_CRM_CONTRACTS.map((contract) => (
+                                            <tr key={contract.id} className="hover:bg-[#F8FAFC]/90 transition-colors">
+                                              <td className="py-1 px-2 font-mono font-bold text-[#0F172A] truncate">
+                                                {contract.id}
+                                              </td>
+                                              <td className="py-1 px-2 font-medium text-[#1E293B] truncate">
+                                                {contract.buyer}
+                                              </td>
+                                              <td className="py-1 px-2 text-[#475569] font-medium truncate">
+                                                {contract.commodity}
+                                              </td>
+                                              <td className="py-1 px-2 font-mono text-[#0F172A] font-semibold truncate">
+                                                {contract.qty}
+                                              </td>
+                                              <td className="py-1 px-2 text-right">
+                                                <span
+                                                  className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[6px] sm:text-[6.5px] font-bold border ${
+                                                    contract.status === "Active"
+                                                      ? "bg-[#ECFDF5] text-[#059669] border-[#A7F3D0]"
+                                                      : contract.status === "Approved"
+                                                      ? "bg-[#EFF6FF] text-[#2563EB] border-[#BFDBFE]"
+                                                      : contract.status === "Pending"
+                                                      ? "bg-[#FFFBEB] text-[#D97706] border-[#FDE68A]"
+                                                      : "bg-[#F1F5F9] text-[#475569] border-[#CBD5E1]"
+                                                  }`}
+                                                >
+                                                  <span
+                                                    className={`h-1 w-1 rounded-full ${
+                                                      contract.status === "Active"
+                                                        ? "bg-[#059669] animate-pulse"
+                                                        : contract.status === "Approved"
+                                                        ? "bg-[#2563EB]"
+                                                        : contract.status === "Pending"
+                                                        ? "bg-[#D97706]"
+                                                        : "bg-[#64748B]"
+                                                    }`}
+                                                  />
+                                                  <span>{contract.status}</span>
+                                                </span>
+                                              </td>
+                                            </tr>
+                                          ))}
+                                        </tbody>
+                                      </table>
+                                    </div>
+
+                                    {/* Bottom Pagination Strip */}
+                                    <div className="bg-[#F8FAFC] border-t border-[#E2E8F0] px-2 py-0.5 sm:py-1 flex items-center justify-between text-[6px] sm:text-[7px] font-mono text-[#64748B] select-none">
+                                      <span>Showing 1–6 of 148 contracts</span>
+                                      <div className="flex items-center gap-1 font-semibold">
+                                        <span className="cursor-pointer hover:text-[#0F172A]">Prev</span>
+                                        <span className="px-1.5 py-0.2 rounded bg-[#2563EB] text-white">1</span>
+                                        <span className="px-1.5 py-0.2 rounded hover:bg-white cursor-pointer">2</span>
+                                        <span className="px-1.5 py-0.2 rounded hover:bg-white cursor-pointer">3</span>
+                                        <span>...</span>
+                                        <span className="px-1.5 py-0.2 rounded hover:bg-white cursor-pointer">15</span>
+                                        <span className="cursor-pointer hover:text-[#0F172A]">Next</span>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
                             </div>
                           </div>
                         )}
 
                         {/* ==============================================
-                            MOCKUP VARIANT 2: TRADING WEBINAR PLATFORM SPEC
+                            MOCKUP VARIANT 2: EXHIBITORSDATA LIST BUILDER REAL APPLICATION
                         ============================================== */}
-                        {project.mockupType === "webinar" && (
-                          <div className="relative h-full w-full flex flex-col justify-between p-3 sm:p-5 font-mono">
-                            {/* Browser Address Bar Spec */}
-                            <div className="flex items-center justify-between border border-[#111111]/10 bg-white/95 px-3 py-1.5 text-[9px] uppercase tracking-wider text-[#6B7280] shadow-sm">
-                              <span className="text-[#111111] flex items-center gap-1.5">
-                                <span className="h-1.5 w-1.5 rounded-full bg-[#2563EB]" />
-                                <span>tradinghub.live/session/webrtc-stream</span>
-                              </span>
-                              <span className="text-[8px] text-[#2563EB]">LOW-LATENCY // 4K 60FPS</span>
-                            </div>
-
-                            {/* Central Stage View & Telemetry Bar */}
-                            <div className="my-auto flex flex-col sm:flex-row gap-2.5 sm:gap-3 py-2">
-                              <div className="flex-1 border border-[#111111]/10 bg-white p-3 shadow-sm flex flex-col justify-between">
-                                <div className="flex items-center justify-between text-[8px] text-[#6B7280]">
-                                  <span>LIVE AUDIENCE FEED</span>
-                                  <span className="text-[#2563EB] font-bold">2,450 STREAMING</span>
-                                </div>
-                                <div className="py-3 flex items-center justify-center gap-1">
-                                  {[40, 65, 30, 85, 45, 95, 60, 40, 75, 55, 90, 45, 70, 80, 50].map((h, i) => (
-                                    <span
-                                      key={i}
-                                      style={{ height: `${h}%` }}
-                                      className="w-1 bg-[#111111]/20 transition-all duration-300 group-hover:bg-[#2563EB]"
-                                    />
-                                  ))}
-                                </div>
-                                <div className="text-[8px] text-[#111111]/60 text-right">WEBRTC AUDIO SYNCED</div>
+                        {project.mockupType === "listbuilder" && (
+                          <div className="relative h-full w-full flex flex-col bg-[#F8FAFC] overflow-hidden text-left font-sans select-none border border-[#CBD5E1]/60">
+                            {/* Realistic macOS Desktop Browser Header */}
+                            <div className="relative z-20 h-7 sm:h-8.5 bg-[#EBF0F5] border-b border-[#CBD5E1] px-2.5 sm:px-3 flex items-center justify-between gap-2 shrink-0">
+                              {/* macOS Traffic Lights */}
+                              <div className="flex items-center gap-1.5 shrink-0">
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56] border border-[#E0443E]/80 shadow-xs" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] border border-[#DEA123]/80 shadow-xs" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F] border border-[#1AAB29]/80 shadow-xs" />
                               </div>
 
-                              <div className="w-full sm:w-44 border border-[#111111]/10 bg-white p-3 shadow-sm space-y-2">
-                                <div className="text-[8px] text-[#6B7280] tracking-widest">IDEMPOTENT GATEWAY</div>
-                                <div className="font-display text-sm font-bold text-[#111111]">ORDER #8921</div>
-                                <div className="text-[8px] text-[#2563EB] font-semibold">HMAC VERIFIED</div>
-                                <div className="text-[7.5px] text-[#6B7280] leading-tight">ZERO DUPLICATE CHARGES</div>
+                              {/* Browser History & Navigation Icons */}
+                              <div className="hidden sm:flex items-center gap-1 text-[#64748B] shrink-0">
+                                <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                                </svg>
+                                <svg className="w-2.5 h-2.5 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                                </svg>
+                                <svg className="w-2.5 h-2.5 ml-0.5 text-[#64748B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                </svg>
+                              </div>
+
+                              {/* Realistic Address Bar */}
+                              <div className="flex-1 max-w-[400px] sm:max-w-[480px] h-5 sm:h-6 bg-white rounded border border-[#CBD5E1] px-2 flex items-center justify-between text-[9px] sm:text-[10px] shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
+                                <div className="flex items-center gap-1.5 truncate">
+                                  <Lock className="w-2.5 h-2.5 text-[#10B981] shrink-0" />
+                                  {/* ExhibitorsData Favicon */}
+                                  <div className="w-2.5 h-2.5 rounded-[2px] bg-[#1E3A8A] text-white flex items-center justify-center text-[6.5px] font-black shrink-0 leading-none">
+                                    ED
+                                  </div>
+                                  <div className="flex items-baseline font-mono text-[8px] sm:text-[9.5px] truncate">
+                                    <span className="text-[#94A3B8]">https://</span>
+                                    <span className="text-[#0F172A] font-semibold">exhibitorsdata.com</span>
+                                    <span className="text-[#64748B]">/user/app/list-builder</span>
+                                  </div>
+                                </div>
+                                <span className="hidden xs:inline-block font-mono text-[7px] text-[#10B981] uppercase tracking-wider shrink-0 font-medium">
+                                  256-BIT SSL
+                                </span>
+                              </div>
+
+                              {/* Browser Controls */}
+                              <div className="hidden sm:flex items-center gap-1.5 text-[#64748B] shrink-0">
+                                <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                                </svg>
+                                <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                </svg>
                               </div>
                             </div>
 
-                            {/* Status Footer */}
-                            <div className="border border-[#111111]/10 bg-white/90 p-2 sm:p-2.5 flex items-center justify-between text-[8px] uppercase tracking-wider text-[#6B7280]">
-                              <span>CONVERSION ENGINE // 14.8% CTR</span>
-                              <span className="text-[#111111] font-medium">STRIPE + WEBHOOK INTEGRATED</span>
+                            {/* Production Application Screenshot Viewport */}
+                            <div className="relative flex-1 bg-[#F8FAFC] overflow-hidden flex items-start justify-center">
+                              <img
+                                src="/images/exhibitors-data-app.png"
+                                alt="ExhibitorsData Enterprise List Builder Production Application"
+                                className="w-full h-full object-cover object-top select-none pointer-events-none"
+                                loading="eager"
+                              />
                             </div>
                           </div>
                         )}
 
                         {/* ==============================================
-                            MOCKUP VARIANT 3: EDITORIAL PORTFOLIO SPEC
+                            MOCKUP VARIANT 3: BIZPROSPEX REAL DESKTOP BROWSER
                         ============================================== */}
-                        {project.mockupType === "portfolio" && (
-                          <div className="relative h-full w-full flex flex-col justify-between p-3 sm:p-5 font-mono">
-                            {/* Browser Address Bar Spec */}
-                            <div className="flex items-center justify-between border border-[#111111]/10 bg-white/95 px-3 py-1.5 text-[9px] uppercase tracking-wider text-[#6B7280] shadow-sm">
-                              <span className="text-[#111111] flex items-center gap-1.5">
-                                <span className="h-1.5 w-1.5 rounded-full bg-[#2563EB]" />
-                                <span>yashhirudkar.dev/spec/editorial</span>
-                              </span>
-                              <span className="text-[8px] text-[#2563EB]">GOLDEN RATIO // 1:1.618</span>
-                            </div>
-
-                            {/* Typographic Wireframe Grid Specimen */}
-                            <div className="my-auto grid grid-cols-2 gap-2.5 sm:gap-3 py-2">
-                              <div className="border border-[#111111]/10 bg-white p-3 shadow-sm space-y-1">
-                                <div className="text-[8px] text-[#6B7280]">JAPANESE MINIMALISM</div>
-                                <div className="font-poster text-xl sm:text-2xl font-bold italic tracking-tight text-[#111111]">
-                                  YASH HIRUDKAR
-                                </div>
-                                <div className="text-[8px] text-[#2563EB]">TAILWIND V4 + FRAMER MOTION</div>
+                        {project.mockupType === "bizprospex" && (
+                          <div className="relative h-full w-full flex flex-col bg-white overflow-hidden text-left font-sans select-none border border-[#CBD5E1]/60">
+                            {/* Realistic macOS Desktop Browser Header */}
+                            <div className="relative z-20 h-7 sm:h-8.5 bg-[#EBF0F5] border-b border-[#CBD5E1] px-2.5 sm:px-3 flex items-center justify-between gap-2 shrink-0">
+                              {/* macOS Traffic Lights */}
+                              <div className="flex items-center gap-1.5 shrink-0">
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56] border border-[#E0443E]/70 shadow-xs" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] border border-[#DEA123]/70 shadow-xs" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F] border border-[#1AAB29]/70 shadow-xs" />
                               </div>
 
-                              <div className="border border-[#111111]/10 bg-white p-3 shadow-sm flex flex-col justify-between">
-                                <div className="flex items-center justify-between text-[8px] text-[#6B7280]">
-                                  <span>LIGHTHOUSE</span>
-                                  <span className="text-[#2563EB] font-bold">100 / 100</span>
-                                </div>
-                                <div className="space-y-1 text-[8px]">
-                                  <div className="flex justify-between text-[#111111]">
-                                    <span>LCP PERFORMANCE</span>
-                                    <span>0.8s</span>
+                              {/* Browser History & Navigation Icons */}
+                              <div className="hidden sm:flex items-center gap-1 text-[#64748B] shrink-0">
+                                <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                                </svg>
+                                <svg className="w-2.5 h-2.5 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                                </svg>
+                                <svg className="w-2.5 h-2.5 ml-0.5 text-[#64748B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                </svg>
+                              </div>
+
+                              {/* Realistic Address Bar */}
+                              <div className="flex-1 max-w-[400px] sm:max-w-[480px] h-5 sm:h-6 bg-white rounded border border-[#CBD5E1] px-2 flex items-center justify-between text-[9px] sm:text-[10px] shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
+                                <div className="flex items-center gap-1.5 truncate">
+                                  <Lock className="w-2.5 h-2.5 text-[#10B981] shrink-0" />
+                                  <span className="w-2.5 h-2.5 rounded-[2px] bg-[#FF6B00] text-white flex items-center justify-center text-[7px] font-black shrink-0 leading-none">
+                                    B
+                                  </span>
+                                  <div className="flex items-baseline font-mono text-[8.5px] sm:text-[9.5px] truncate">
+                                    <span className="text-[#94A3B8]">https://</span>
+                                    <span className="text-[#0F172A] font-semibold">bizprospex.com</span>
+                                    <span className="text-[#64748B]">/</span>
                                   </div>
-                                  <div className="flex justify-between text-[#111111]">
-                                    <span>CUMULATIVE SHIFT</span>
-                                    <span>0.00</span>
-                                  </div>
                                 </div>
-                                <div className="text-[7.5px] text-[#6B7280]">FLUID TYPOGRAPHIC RHYTHM</div>
+                                <span className="hidden xs:inline-block font-mono text-[7px] text-[#10B981] uppercase tracking-wider shrink-0 font-medium">
+                                  256-BIT SSL
+                                </span>
+                              </div>
+
+                              {/* Browser Controls */}
+                              <div className="hidden sm:flex items-center gap-1.5 text-[#64748B] shrink-0">
+                                <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                                </svg>
+                                <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                </svg>
                               </div>
                             </div>
 
-                            {/* Spec Footer */}
-                            <div className="border border-[#111111]/10 bg-white/90 p-2 sm:p-2.5 flex items-center justify-between text-[8px] uppercase tracking-wider text-[#6B7280]">
-                              <span>RESPONSIVE ENGINE // FLUID SCALE</span>
-                              <span className="text-[#2563EB]">EDITION // 2026.01</span>
+                            {/* BizProspex Live Website Viewport */}
+                            <div className="relative flex-1 bg-white flex flex-col justify-between overflow-hidden">
+                              {/* Background subtle micro-dots */}
+                              <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(#FF6B00_0.75px,transparent_0.75px)] [background-size:16px_16px] opacity-[0.04]" />
+                              <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-[#FF6B00]/5 blur-xl pointer-events-none" />
+
+                              {/* BizProspex Navbar */}
+                              <div className="relative z-10 w-full h-7 sm:h-8 border-b border-[#F1F5F9] bg-white/95 px-3 sm:px-4 flex items-center justify-between shrink-0">
+                                {/* BizProspex Logo */}
+                                <div className="flex items-center gap-1.5 shrink-0">
+                                  <div className="w-4 h-4 rounded bg-[#FF6B00] flex items-center justify-center text-white text-[9px] font-black shadow-xs">
+                                    <svg className="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24">
+                                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                    </svg>
+                                  </div>
+                                  <div className="flex items-baseline font-sans leading-none">
+                                    <span className="font-extrabold text-[11px] sm:text-[13px] text-[#0F172A] tracking-tight">Biz</span>
+                                    <span className="font-extrabold text-[11px] sm:text-[13px] text-[#FF6B00] tracking-tight">Prospex</span>
+                                  </div>
+                                </div>
+
+                                {/* Navigation Links */}
+                                <div className="hidden md:flex items-center gap-3 text-[9px] font-medium text-[#475569]">
+                                  <span className="hover:text-[#0F172A] cursor-pointer">Services</span>
+                                  <span className="hover:text-[#0F172A] cursor-pointer">Data Intelligence</span>
+                                  <span className="hover:text-[#0F172A] cursor-pointer">CRM Cleaning</span>
+                                  <span className="hover:text-[#0F172A] cursor-pointer">Healthcare Data</span>
+                                  <span className="hover:text-[#0F172A] cursor-pointer">Solutions</span>
+                                </div>
+
+                                {/* Action Buttons */}
+                                <div className="flex items-center gap-2 shrink-0">
+                                  <span className="hidden sm:inline-block text-[8.5px] font-medium text-[#64748B]">Sign In</span>
+                                  <span className="px-2 py-0.5 sm:py-1 rounded bg-[#FF6B00] text-white text-[8px] sm:text-[9px] font-bold tracking-tight shadow-xs">
+                                    Get Free Sample
+                                  </span>
+                                </div>
+                              </div>
+
+                              {/* BizProspex Hero Area */}
+                              <div className="relative z-10 flex-1 px-3 sm:px-4.5 py-2 sm:py-2.5 flex flex-col justify-between">
+                                <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center my-auto">
+                                  
+                                  {/* Left 7 cols: Headline, Badge, Subtitle & CTA */}
+                                  <div className="md:col-span-7 space-y-1 sm:space-y-1.5">
+                                    {/* Trust Pill Badge */}
+                                    <div className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-[#FF6B00]/10 border border-[#FF6B00]/25 text-[#FF6B00] text-[7px] sm:text-[8px] font-bold tracking-wide">
+                                      <span className="h-1.5 w-1.5 rounded-full bg-[#10B981] animate-pulse" />
+                                      <span>98% ACCURACY GUARANTEE · HUMAN-VERIFIED</span>
+                                    </div>
+
+                                    {/* Hero Headline */}
+                                    <h4 className="font-sans font-extrabold text-[12px] sm:text-[15px] lg:text-[17px] leading-[1.2] text-[#0F172A] tracking-tight">
+                                      Discover Verified B2B Data &amp; Intelligence to{" "}
+                                      <span className="bg-gradient-to-r from-[#FF6B00] to-[#EA580C] bg-clip-text text-transparent">
+                                        Accelerate Sales Growth
+                                      </span>
+                                    </h4>
+
+                                    {/* Subtitle */}
+                                    <p className="text-[7.5px] sm:text-[8.5px] text-[#475569] leading-relaxed line-clamp-2 max-w-[320px]">
+                                      Power your pipeline with 10M+ verified executive contacts, custom ICP dataset enrichment, and real-time CRM hygiene.
+                                    </p>
+
+                                    {/* Hero CTAs */}
+                                    <div className="flex items-center gap-1.5 pt-0.5">
+                                      <span className="inline-flex items-center gap-1 px-2 py-0.5 sm:py-1 rounded bg-[#FF6B00] text-white font-bold text-[7.5px] sm:text-[8.5px] shadow-xs">
+                                        <span>Get Custom Data Sample</span>
+                                        <ArrowUpRight className="w-2.5 h-2.5" />
+                                      </span>
+                                      <span className="hidden xs:inline-flex items-center px-1.5 py-0.5 sm:py-1 rounded border border-[#CBD5E1] bg-white text-[#334155] font-semibold text-[7.5px] sm:text-[8.5px]">
+                                        Explore Data Feeds
+                                      </span>
+                                    </div>
+                                  </div>
+
+                                  {/* Right 5 cols: Enterprise B2B Data Intelligence Platform Graphic */}
+                                  <div className="md:col-span-5 hidden sm:block">
+                                    <div className="rounded-md border border-[#E2E8F0] bg-white/95 p-2 shadow-xs space-y-1.5">
+                                      <div className="flex items-center justify-between pb-1 border-b border-[#F1F5F9]">
+                                        <div className="flex items-center gap-1.5">
+                                          <div className="w-4 h-4 rounded-full bg-[#0F172A] text-white flex items-center justify-center text-[7.5px] font-bold">
+                                            SJ
+                                          </div>
+                                          <div>
+                                            <div className="text-[8px] font-bold text-[#0F172A] leading-tight">Sarah Jenkins</div>
+                                            <div className="text-[6.5px] text-[#64748B]">VP Revenue Operations</div>
+                                          </div>
+                                        </div>
+                                        <span className="px-1 py-0.5 rounded bg-[#10B981]/15 text-[#059669] text-[6.5px] font-bold flex items-center gap-0.5">
+                                          <CheckCircle2 className="w-2 h-2" /> VERIFIED
+                                        </span>
+                                      </div>
+
+                                      <div className="space-y-0.5 font-mono text-[7px]">
+                                        <div className="flex justify-between items-center text-[#334155] bg-[#F8FAFC] px-1 py-0.5 rounded">
+                                          <span className="text-[#64748B]">Direct Dial:</span>
+                                          <span className="font-semibold text-[#0F172A]">+1 (415) 892-••••</span>
+                                        </div>
+                                        <div className="flex justify-between items-center text-[#334155] bg-[#F8FAFC] px-1 py-0.5 rounded">
+                                          <span className="text-[#64748B]">Work Email:</span>
+                                          <span className="font-semibold text-[#10B981]">100% Deliverable</span>
+                                        </div>
+                                        <div className="flex justify-between items-center text-[#334155] bg-[#F8FAFC] px-1 py-0.5 rounded">
+                                          <span className="text-[#64748B]">CRM Sync:</span>
+                                          <span className="font-semibold text-[#FF6B00]">Salesforce / HubSpot</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+
+                                {/* Bottom Statistics Strip */}
+                                <div className="pt-1.5 border-t border-[#F1F5F9] grid grid-cols-3 gap-2 text-center select-none">
+                                  <div className="border-r border-[#F1F5F9]">
+                                    <div className="font-sans font-black text-[10px] sm:text-[12px] text-[#0F172A]">98%</div>
+                                    <div className="text-[6.5px] sm:text-[7.5px] font-mono uppercase tracking-wider text-[#64748B]">Accuracy Guarantee</div>
+                                  </div>
+                                  <div className="border-r border-[#F1F5F9]">
+                                    <div className="font-sans font-black text-[10px] sm:text-[12px] text-[#0F172A]">10M+</div>
+                                    <div className="text-[6.5px] sm:text-[7.5px] font-mono uppercase tracking-wider text-[#64748B]">Verified Records</div>
+                                  </div>
+                                  <div>
+                                    <div className="font-sans font-black text-[10px] sm:text-[12px] text-[#0F172A]">500+</div>
+                                    <div className="text-[6.5px] sm:text-[7.5px] font-mono uppercase tracking-wider text-[#64748B]">Enterprise Clients</div>
+                                  </div>
+                                </div>
+
+                              </div>
                             </div>
                           </div>
                         )}
 
                       </div>
 
-                      {/* Artboard Watermark Kanji */}
-                      <span className="absolute bottom-2 right-3 font-mono text-[9px] uppercase tracking-[0.3em] text-[#111111]/25 select-none pointer-events-none">
-                        {project.kanji}
-                      </span>
                     </div>
 
                     {/* Studio Mockup Base Ticks */}
                     <div className="mt-2.5 pt-2 flex items-center justify-between font-mono text-[8.5px] uppercase tracking-[0.24em] text-[#6B7280]/70">
                       <span>PROJECT ARCHITECTURE // VIEWPORT SPEC</span>
+                      <span className="font-mono text-[8.5px] uppercase tracking-[0.3em] text-[#111111]/30">
+                        {project.kanji}
+                      </span>
                       <span className="text-[#111111] font-semibold">{project.year}</span>
                     </div>
 
@@ -500,11 +939,10 @@ export function FeaturedWork() {
                     Occupies 42% on Desktop
                 ==================================================== */}
                 <div
-                  className={`w-full lg:w-[42%] space-y-6 sm:space-y-7 ${
-                    isEven ? "lg:order-1" : "lg:order-2"
-                  }`}
+                  className={`w-full lg:w-[42%] space-y-6 sm:space-y-7 ${isEven ? "lg:order-1" : "lg:order-2"
+                    }`}
                 >
-                  
+
                   {/* Category & Project Index Header */}
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.28em] text-[#2563EB]">
@@ -565,31 +1003,43 @@ export function FeaturedWork() {
 
                   {/* CTA Buttons: Live Demo, GitHub, Case Study */}
                   <div className="flex flex-wrap items-center gap-3 pt-2">
-                    {/* Primary Button: Live Demo */}
-                    <motion.a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ y: -1, scale: 1.01 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="inline-flex items-center justify-center gap-2 bg-[#2563EB] px-5 sm:px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] font-medium text-white shadow-sm transition hover:bg-[#1D4ED8]"
-                    >
-                      <span>Live Demo</span>
-                      <ArrowUpRight size={13} />
-                    </motion.a>
+                    {/* Primary Button: Live Demo / Live Website / Disabled (Private Software) */}
+                    {project.liveUrl && project.liveUrl.trim() !== "" ? (
+                      <motion.a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ y: -1, scale: 1.01 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="inline-flex items-center justify-center gap-2 bg-[#2563EB] px-5 sm:px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] font-medium text-white shadow-sm transition hover:bg-[#1D4ED8]"
+                      >
+                        <span>{project.mockupType === "bizprospex" ? "Live Website" : "Live Demo"}</span>
+                        <ArrowUpRight size={13} />
+                      </motion.a>
+                    ) : (
+                      <div
+                        className="inline-flex items-center justify-center gap-2 border border-[#111111]/15 bg-[#111111]/[0.02] px-5 sm:px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] font-medium text-[#6B7280]/60 select-none cursor-not-allowed"
+                        title="Private Enterprise Software — Internal Access Only"
+                      >
+                        <Lock size={12} className="text-[#6B7280]/60" />
+                        <span>Private Software</span>
+                      </div>
+                    )}
 
-                    {/* Secondary Button: GitHub */}
-                    <motion.a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ y: -1, scale: 1.01 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="inline-flex items-center justify-center gap-2 border border-[#111111]/20 bg-white px-5 sm:px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] font-medium text-[#111111] transition hover:border-[#111111] hover:bg-[#111111]/[0.03]"
-                    >
-                      <Github size={13} />
-                      <span>GitHub</span>
-                    </motion.a>
+                    {/* Secondary Button: GitHub (Hidden for private projects) */}
+                    {Boolean(project.githubUrl && project.githubUrl.trim() !== "") && (
+                      <motion.a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ y: -1, scale: 1.01 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="inline-flex items-center justify-center gap-2 border border-[#111111]/20 bg-white px-5 sm:px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] font-medium text-[#111111] transition hover:border-[#111111] hover:bg-[#111111]/[0.03]"
+                      >
+                        <Github size={13} />
+                        <span>GitHub</span>
+                      </motion.a>
+                    )}
 
                     {/* Tertiary Button: Case Study */}
                     <motion.a
