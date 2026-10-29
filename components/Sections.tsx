@@ -6,6 +6,7 @@ import { ArrowUpRight, Github, Linkedin, Mail, MapPin, Moon, Sun, ExternalLink, 
 import { Reveal, Tilt, Counter } from "./fx";
 import { profile, stats, skills, stack, experience, projects, achievements, education } from "@/lib/content";
 export { Hero } from "./Hero";
+export { Nav } from "./Nav";
 
 const SectionTitle = ({ k, t, num }: { k: string; t: string; num: string }) => (
   <div className="mb-16 border-b border-white/15 pb-6">
@@ -28,27 +29,7 @@ const Sec = ({ id, children }: { id: string; children: React.ReactNode }) => (
   </section>
 );
 
-export function Nav() {
-  const [light, setLight] = useState(false);
-  const [show, setShow] = useState(false);
-  useEffect(() => { document.documentElement.classList.toggle("light", light); }, [light]);
-  useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > window.innerHeight * 0.4);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  return (
-    <nav aria-label="Primary" aria-hidden={!show} inert={!show} className={`glass fixed top-6 left-1/2 z-50 flex -translate-x-1/2 items-center gap-1.5 rounded-full px-4 py-2.5 text-xs font-mono uppercase tracking-wider transition-all duration-500 ${show ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 -translate-y-4"}`}>
-      {["about", "skills", "experience", "projects", "contact"].map((s) => (
-        <a key={s} href={`#${s}`} className="hidden rounded-full px-3 py-1.5 text-muted transition hover:bg-white/10 hover:text-fg sm:block">{s}</a>))}
-      <span className="px-2 font-display font-bold sm:hidden text-primary">YH</span>
-      <div className="h-4 w-[1px] bg-white/10 mx-1 hidden sm:block" />
-      <button onClick={() => setLight(!light)} aria-label="Toggle theme" className="rounded-full p-1.5 text-muted transition hover:bg-white/10 hover:text-fg">
-        {light ? <Moon size={14} /> : <Sun size={14} />}</button>
-    </nav>
-  );
-}
+
 
 export function About() {
   return (

@@ -1,6 +1,12 @@
 import { Smooth } from "@/components/fx";
-import { Nav, Hero, Skills, Experience, Projects, Achievements, Education, Contact, Footer } from "@/components/Sections";
+import { Nav, Hero } from "@/components/Sections";
 import { AboutMe } from "@/components/AboutMe";
+import { TechArsenal } from "@/components/TechArsenal";
+import { FeaturedWork } from "@/components/FeaturedWork";
+import { Experience } from "@/components/Experience";
+import { Achievements } from "@/components/Achievements";
+import { OpenSource } from "@/components/OpenSource";
+import { Contact } from "@/components/Contact";
 
 export default function Page() {
   return (
@@ -10,14 +16,13 @@ export default function Page() {
       <main>
         <Hero />
         <AboutMe />
-        <Skills />
+        <TechArsenal />
+        <FeaturedWork />
         <Experience />
-        <Projects />
         <Achievements />
-        <Education />
+        <OpenSource />
         <Contact />
       </main>
-      <Footer />
     </>
   );
 }
