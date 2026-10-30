@@ -321,6 +321,7 @@ export function FeaturedWork() {
             return (
               <motion.article
                 key={project.id}
+                id={project.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}

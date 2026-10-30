@@ -520,6 +520,7 @@ export function OpenSource() {
                 {PINNED_REPOSITORIES.map((repo, rIdx) => (
                   <motion.a
                     key={repo.id}
+                    id={repo.id}
                     href={repo.url}
                     target="_blank"
                     rel="noopener noreferrer"
