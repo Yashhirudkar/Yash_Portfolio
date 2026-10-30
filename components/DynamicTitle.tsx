@@ -39,7 +39,7 @@ const SECTION_TARGETS: SectionTitleTarget[] = [
 const DEFAULT_TITLE = "Yash Hirudkar — Full Stack Developer";
 
 const IDLE_TITLES = [
-  "👋 Come back — Yash Hirudkar",
+  "Software Developer — Yash Hirudkar",
   "Building Something Amazing...",
   "Yash Hirudkar Portfolio",
 ];
