@@ -10,6 +10,7 @@ import {
   Mail,
   MapPin,
   Check,
+  Phone,
 } from "lucide-react";
 
 export function Contact() {
@@ -285,6 +286,16 @@ export function Contact() {
           >
             <Mail size={13} className="text-[#111111]/70 group-hover:text-[#2563EB]" />
             <span>Email</span>
+            <span className="absolute -bottom-1 left-0 right-0 h-[1px] w-0 bg-[#2563EB] transition-all duration-300 group-hover:w-full" />
+          </a>
+
+          {/* Phone */}
+          <a
+            href="tel:+917666407114"
+            className="group relative flex items-center gap-1.5 transition-colors hover:text-[#111111]"
+          >
+            <Phone size={13} className="text-[#111111]/70 group-hover:text-[#2563EB]" />
+            <span>+91 7666407114</span>
             <span className="absolute -bottom-1 left-0 right-0 h-[1px] w-0 bg-[#2563EB] transition-all duration-300 group-hover:w-full" />
           </a>
 

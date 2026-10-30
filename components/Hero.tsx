@@ -120,7 +120,6 @@ export function Hero() {
               </span>
               <p className="font-semibold text-[#0047FF]">AVAILABLE FOR WORK</p>
             </div>
-            <p className="text-[#0A0A0C]/75">7666407114 · yashhirudkar100@gmail.com </p>
             <p className="text-[#0A0A0C]/75">SYS // STABLE · CRAFTSMAN</p>
           </div>
         </div>
@@ -130,6 +129,7 @@ export function Hero() {
         <div className="flex items-end justify-between font-mono text-[9px] uppercase tracking-[0.28em]">
           <div className="space-y-1">
             <p className="font-semibold text-[#0A0A0C]">EDITION // 2026.01</p>
+            <p className="text-[#0A0A0C]/75">7666407114 · yashhirudkar100@gmail.com </p>
             <p className="text-[#0A0A0C]/75">NAGPUR, IN · 21.1458° N</p>
           </div>
           <div />
