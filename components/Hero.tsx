@@ -120,6 +120,7 @@ export function Hero() {
               </span>
               <p className="font-semibold text-[#0047FF]">AVAILABLE FOR WORK</p>
             </div>
+            <p className="text-[#0A0A0C]/75">7666407114 · yashhirudkar100@gmail.com </p>
             <p className="text-[#0A0A0C]/75">SYS // STABLE · CRAFTSMAN</p>
           </div>
         </div>
